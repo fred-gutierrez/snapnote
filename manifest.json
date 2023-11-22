@@ -4,5 +4,8 @@
   "version": "0.0.3",
   "description": "SnapNote is an open-source note-taking extension created with the goals of transparency, convenience, and most importantly, speed.",
   "permissions": ["clipboardWrite", "downloads"],
-  "action": { "default_popup": "index.html" }
+  "action": { "default_popup": "index.html" },
+  "icons": {
+    "128": "snapnote-blue.png"
+  }
 }
