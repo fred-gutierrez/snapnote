@@ -3,7 +3,7 @@ import DarkModeSwitch from "./DarkModeSwitch";
 
 export default function Navbar() {
   return (
-    <nav className="grid grid-cols-2 py-8 px-10 rounded-b-xl items-center dark:bg-neutral-600 dark:text-white bg-neutral-200 text-black">
+    <nav className="grid grid-cols-2 py-8 px-10 items-center dark:bg-neutral-600 dark:text-white bg-neutral-200 text-black">
       <div>
         <h1 className="text-2xl font-bold">
           <Link to="/" className="group">

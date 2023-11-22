@@ -27,7 +27,7 @@ export default function Settings() {
   };
 
   return (
-    <section className="mx-7">
+    <section className="mx-5">
       <header className="flex justify-between items-center mb-5">
         <div
           onMouseEnter={() => setGoBack(true)}

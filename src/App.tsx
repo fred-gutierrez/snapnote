@@ -13,11 +13,11 @@ export default function App() {
         <SettingsProvider>
           <body>
             <div className="app m-auto">
-              <div className="py-5 rounded-t-xl dark:bg-neutral-700 dark:text-white bg-neutral-100 text-black">
+              <div className="py-5 dark:bg-neutral-700 dark:text-white bg-neutral-100 text-black">
                 <Routes>
                   <Route path="*" element={<Home />} />
-                  <Route exact path="/" element={<Home />} />
-                  <Route exact path="/settings" element={<Settings />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/settings" element={<Settings />} />
                 </Routes>
               </div>
               <Navbar />

@@ -1,6 +1,21 @@
+/* Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Fontawesome */
+@import url("https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url("https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css");
+@import url("https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css");
+@import url("https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css");
+
+/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Any other styles that can't be applied with Tailwind CSS */
+body {
+  font-family: "Inter";
+}
 
 .app {
   width: 500px;
