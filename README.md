@@ -1,7 +1,7 @@
 <p align="center">
   <p align="center">
    <!-- <img width="150" height="150" src="src/app/icon.png" alt="Logo"> -->
-	<img width="150" height="150" src="other/snapnote-blue.png" alt="Logo">
+	<img width="150" height="150" src="github/snapnote-blue.png" alt="Logo">
   </p>
 	<h1 align="center"><b>SnapNote</b></h1>
 	<p align="center">
@@ -27,8 +27,8 @@ Powered by the open-source block-based rich text editor <a href="https://github.
 <br/>
 
 <div align="center">
-<img src="other/lightmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
-<img src="other/darkmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
+<img src="github/lightmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
+<img src="github/darkmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
 </div>
 
 <h2>Motivation</h2>
