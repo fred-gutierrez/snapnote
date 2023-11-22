@@ -44,8 +44,18 @@ export default function Settings() {
             <h1 className="text-3xl font-bold underline">Settings</h1>
           )}
         </div>
-        <Coffee />
+        <div className="flex items-center">
+          <a
+            href="https://github.com/fred-gutierrez/SnapNote"
+            className="text-base mr-4"
+            target="_blank"
+          >
+            <i className="fa-brands fa-github fa-xl"></i>
+          </a>
+          <Coffee />
+        </div>
       </header>
+
       <div className="h-96 p-5 text-lg overflow-y-auto rounded leading-8 dark:bg-neutral-600 bg-neutral-200">
         <button onClick={toggleHideExportMenu}>
           <i

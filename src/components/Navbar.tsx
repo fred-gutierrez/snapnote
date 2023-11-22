@@ -15,8 +15,8 @@ export default function Navbar() {
         </h1>
       </div>
       <div className="text-end">
-        <DarkModeSwitch className="mr-1 text-base" />
-        <Link to="/settings" className="ml-3 text-base">
+        <DarkModeSwitch className="text-base mx-4" />
+        <Link to="/settings" className="text-base">
           <i className="fa-regular fa-gear fa-xl"></i>
         </Link>
       </div>
