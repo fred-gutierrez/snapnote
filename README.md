@@ -11,9 +11,9 @@
     <br />
     <br />
     <b>Download for </b>
-    <a href="">Google Chrome</a> |
-    <a href="">Firefox</a> | 
-    <a href="">Edge</a>
+    <a href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng">Google Chrome</a> |
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/snapnote/">Firefox</a> | 
+    <a href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng">Edge</a>
     <br />
   </p>
 </p>
@@ -50,5 +50,6 @@ Powered by the open-source block-based rich text editor <a href="https://github.
 <h2>Contributing</h2>
 <p>We're delighted that you're considering contributing to this project. <b>Every</b> contribution matters, whether it's documentation, refactoring, adding new ideas/components, or anything else you believe would be a valuable addition. Please refer to the <a href="CONTRIBUTING.md">contributing guide</a> for directions.</p>
 
-<h2>Roadmap</h2>
-Yet to be mapped.
+## Roadmap
+
+The roadmap can be found [here](ROADMAP.md).
