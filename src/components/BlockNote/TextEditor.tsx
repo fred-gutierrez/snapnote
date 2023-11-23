@@ -14,9 +14,34 @@ export default function TextEditor() {
   const [markdown, setMarkdown] = useState<string>("");
   const [html, setHTML] = useState<string>("");
   const [text, setText] = useState<string>("");
+
   const { isDarkMode } = useDarkMode();
   const { hideExportMenu } = useHideExportMenu();
   const { hideCopy } = useHideCopy();
+
+  const saveBlocksAsMarkdown = async (blocks: Block[]) => {
+    const markdown: string = await editor.blocksToMarkdown(
+      blocks.filter((block: Block) => block.type !== "image"),
+    );
+    setMarkdown(markdown);
+  };
+
+  const saveBlocksAsHTML = async (blocks: Block[]) => {
+    const html: string = await editor.blocksToHTML(
+      blocks.filter((block: Block) => block.type !== "image"),
+    );
+    setHTML(html);
+  };
+
+  const saveText = (blocks: Block[]) => {
+    const textContent: string = blocks
+      // This specifically remove the image property to be added to the text
+      .filter((block: Block) => block.type !== "image")
+      .map((block: Block) => block.content?.map((inline: any) => inline.text))
+      .join("\n");
+
+    setText(textContent);
+  };
 
   const editor: BlockNoteEditor = useBlockNote({
     // Save on localStorage
@@ -28,44 +53,22 @@ export default function TextEditor() {
         "editorContent",
         JSON.stringify(editor.topLevelBlocks),
       );
-      // Save block as markdown
-      const saveBlocksAsMarkdown = async () => {
-        const markdown: string = await editor.blocksToMarkdown(
-          editor.topLevelBlocks.filter(
-            (block: Block) => block.type !== "image",
-          ),
-        );
-        setMarkdown(markdown);
-      };
-      saveBlocksAsMarkdown();
 
-      const saveBlocksAsHTML = async () => {
-        const html: string = await editor.blocksToHTML(
-          editor.topLevelBlocks.filter(
-            (block: Block) => block.type !== "image",
-          ),
-        );
-        setHTML(html);
-      };
-      saveBlocksAsHTML();
-      // Save just the text (No markdown)
-      const saveText = async () => {
-        const text: string = extractTextFromBlocks(editor.topLevelBlocks);
-        setText(text);
-      };
-      saveText();
+      saveBlocksAsMarkdown(editor.topLevelBlocks);
+
+      saveBlocksAsHTML(editor.topLevelBlocks);
+
+      saveText(editor.topLevelBlocks);
+    },
+
+    onEditorReady: (editor) => {
+      if (initialContent) {
+        saveBlocksAsMarkdown(editor.topLevelBlocks);
+        saveBlocksAsHTML(editor.topLevelBlocks);
+        saveText(editor.topLevelBlocks);
+      }
     },
   });
-
-  const extractTextFromBlocks = (blocks: Block[]) => {
-    const textContent: string = blocks
-      // This specifically remove the image property to be added to the text
-      .filter((block: Block) => block.type !== "image")
-      .map((block: Block) => block.content?.map((inline: any) => inline.text))
-      .join("\n");
-
-    return textContent;
-  };
 
   return (
     <div className="flex flex-col h-112">
@@ -90,4 +93,3 @@ export default function TextEditor() {
     </div>
   );
 }
-
