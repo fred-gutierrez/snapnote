@@ -8,8 +8,6 @@ import CopyToClipboard from "../CopyToClipboard";
 import { useHideExportMenu, useHideCopy } from "../../context/SettingsProvider";
 import { useDarkMode } from "../../context/DarkModeProvider";
 
-const initialContent: string | null = localStorage.getItem("editorContent");
-
 export default function TextEditor() {
   const [markdown, setMarkdown] = useState<string>("");
   const [html, setHTML] = useState<string>("");
@@ -38,16 +36,19 @@ export default function TextEditor() {
       .filter((block: Block) => block.type !== "image")
       .map((block: Block) => block.content?.map((inline: any) => inline.text))
       .join("\n");
-    
+
     setText(textContent);
   };
 
+  // This gets the previously stored editor contents (Must be within the text editor to ensure that when changing routes it gets the most recent text)
+  const initialContent: string | null = localStorage.getItem("editorContent");
+
   const editor: BlockNoteEditor = useBlockNote({
-    // Save on localStorage
+    // If the editor contents were previously saved, this restores them
     initialContent: initialContent ? JSON.parse(initialContent) : undefined,
 
     onEditorContentChange: (editor) => {
-      // Save on localStorage
+      // Serializes and saves the editor contents to local storage.
       localStorage.setItem(
         "editorContent",
         JSON.stringify(editor.topLevelBlocks),
