@@ -35,11 +35,10 @@ export default function TextEditor() {
 
   const saveText = (blocks: Block[]) => {
     const textContent: string = blocks
-      // This specifically remove the image property to be added to the text
       .filter((block: Block) => block.type !== "image")
       .map((block: Block) => block.content?.map((inline: any) => inline.text))
       .join("\n");
-
+    
     setText(textContent);
   };
 
@@ -71,7 +70,7 @@ export default function TextEditor() {
   });
 
   return (
-    <div className="flex flex-col h-112">
+    <div className="flex flex-col h-112 overflow-hidden">
       <BlockNoteView
         editor={editor}
         className="flex-1 overflow-y-auto rounded-xl dark:bg-neutral-600 bg-neutral-200"
