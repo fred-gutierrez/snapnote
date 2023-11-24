@@ -1,7 +1,7 @@
 <p align="center">
   <p align="center">
    <!-- <img width="150" height="150" src="src/app/icon.png" alt="Logo"> -->
-	<img width="150" height="150" src="github/snapnote-dark.png" alt="Logo">
+	<img width="150" height="150" src="github/snapnote-vicecity.png" alt="Logo">
   </p>
 	<h1 align="center"><b>SnapNote</b></h1>
 	<p align="center">
