@@ -35,22 +35,24 @@ export default function Settings() {
         >
           {goBack ? (
             <Link to={"/"}>
-              <h1 className="text-3xl font-bold underline">
+              <h1 className="text-3xl font-bold underline hover:scale-105 transition duration-100 ease-in-out">
                 <i className="fa-solid fa-chevron-left mr-2 text-2xl"></i>
                 Go Back
               </h1>
             </Link>
           ) : (
-            <h1 className="text-3xl font-bold underline">Settings</h1>
+            <h1 className="text-3xl font-bold underline">
+              Settings
+            </h1>
           )}
         </div>
         <div className="flex items-center">
           <a
             href="https://github.com/fred-gutierrez/SnapNote"
-            className="text-base mr-4"
+            className="text-lg mr-4"
             target="_blank"
           >
-            <i className="fa-brands fa-github fa-xl"></i>
+            <i className="fa-brands fa-github fa-xl hover:-translate-y-0.5 transition duration-150 ease-in-out"></i>
           </a>
           <Coffee />
         </div>

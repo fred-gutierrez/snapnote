@@ -52,7 +52,7 @@ export default function ExportMenu({ markdown, html }: any) {
   return (
     <>
       <button
-        className="text-base py-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200"
+        className="text-base py-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200 hover:-translate-y-0.5 transition duration-150 ease-in-out"
         onClick={isMenuOpen ? closeMenu : openMenu}
       >
         {showEmptyMessage
@@ -65,13 +65,13 @@ export default function ExportMenu({ markdown, html }: any) {
       {isMenuOpen && (
         <div className="text-base absolute rounded-lg top-0 ml-2 mt-36 p-5 dark:bg-neutral-700 bg-neutral-100 shadow-lg">
           <button
-            className="py-5 w-48 mr-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200"
+            className="py-5 w-48 mr-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200 hover:-translate-y-0.5 transition duration-150 ease-in-out"
             onClick={exportMarkdown}
           >
             Export as Markdown
           </button>
           <button
-            className="py-5 w-48 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200"
+            className="py-5 w-48 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200 hover:-translate-y-0.5 transition duration-150 ease-in-out"
             onClick={exportHTML}
           >
             Export as HTML
@@ -81,4 +81,3 @@ export default function ExportMenu({ markdown, html }: any) {
     </>
   );
 }
-

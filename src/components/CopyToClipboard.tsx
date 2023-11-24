@@ -37,7 +37,7 @@ export default function CopyToClipboard({ text }: any) {
   return (
     <>
       <button
-        className="text-base py-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200"
+        className="text-base py-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200 hover:-translate-y-0.5 transition duration-150 ease-in-out"
         onClick={copyToClipboard}
       >
         {copyDone ? copyDone : copyError ? copyError : "Copy to Clipboard"}
