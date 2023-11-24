@@ -33,6 +33,15 @@ const lightTheme = {
   },
   borderRadius: 4,
   fontFamily: "Inter",
+  componentStyles: () => ({
+    Editor: {
+      a: {
+        color: "#737373",
+        textDecoration: "underline",
+        cursor: "pointer",
+      },
+    },
+  }),
 } satisfies Theme;
 
 const darkTheme = {
@@ -68,6 +77,15 @@ const darkTheme = {
   },
   borderRadius: 4,
   fontFamily: "Inter",
+  componentStyles: () => ({
+    Editor: {
+      a: {
+        color: "#bcbcbc",
+        textDecoration: "underline",
+        cursor: "pointer",
+      },
+    },
+  }),
 } satisfies Theme;
 
 // Combining the custom themes into a single theme object.
@@ -75,4 +93,3 @@ export const theme = {
   light: lightTheme,
   dark: darkTheme,
 };
-

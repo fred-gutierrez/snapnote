@@ -5,7 +5,7 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 ### Version 0.1
 
 *   Removed system outline issue (primarily occurring on Firefox). ✅
-*   Fixed the hyperlink issue where, by adding a hyperlink, the color would stay the same. ❌
+*   Fixed the hyperlink issue where, by adding a hyperlink, the color would stay the same. ✅
 *   Fixed Export Menu and Copy To Clipboard state issues, where either refreshing or reopening the extension didn't recognize that there was content in the note until adding or removing a character. ✅
 *   Added animations to the buttons and text outside the editor. ✅
 *   Fixed a minor bug where, upon navigating to settings, the previously saved text wasn't up-to-date until refreshed. ✅
