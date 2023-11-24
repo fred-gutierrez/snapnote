@@ -6,7 +6,7 @@
   "permissions": ["clipboardWrite"],
   "action": { "default_popup": "index.html" },
   "icons": {
-    "128": "snapnote-blue.png"
+    "128": "snapnote-dark.png"
   },
   "browser_specific_settings": {
     "gecko": {
