@@ -1,7 +1,7 @@
 <p align="center">
   <p align="center">
    <!-- <img width="150" height="150" src="src/app/icon.png" alt="Logo"> -->
-	<img width="150" height="150" src="github/snapnote-vicecity.png" alt="Logo">
+	<img width="150" height="150" src="github/snapnote-blue.png" alt="Logo">
   </p>
 	<h1 align="center"><b>SnapNote</b></h1>
 	<p align="center">
@@ -22,10 +22,12 @@ SnapNote is an open-source note-taking extension created with the goals of trans
 
 Powered by the open-source block-based rich text editor [BlockNote](https://github.com/TypeCellOS/BlockNote) and, in the future, offering [Milkdown](https://github.com/Milkdown/milkdown) as an option.
 
-<div align="center">
+<!-- <div align="center">
  <img src="github/lightmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
  <img src="github/darkmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
-</div>
+</div> -->
+
+ <img src="github/1400x560.png" alt="Dark Mode Screenshot" />
 
 ## Motivation
 This project was initially created with the realization that sometimes we need to take quick notes while navigating the web. We often use apps like Notion or Obsidian, but there are instances where we may not have the option to do so or, for something **quick**, lack the time to open the app and create a new note. SnapNote is designed for us, anytime, anywhere, with it installed, to take a note **immediately** in our browser and then transfer that information to our preferred apps when possible.
