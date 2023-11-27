@@ -10,10 +10,13 @@
     Demo: <a href="https://snapnote-demo.vercel.app"><strong>snapnote-demo.vercel.app</strong></a>
     <br />
     <br />
+<a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a> <a rel="noreferrer noopener" href="https://addons.mozilla.org/en-GB/firefox/addon/snapnote/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a> <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>
+		<!--
     <b>Download for </b>
-    <a href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng">Google Chrome</a> |
+    <a href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng">Google Chrome</a>  |
     <a href="https://addons.mozilla.org/en-US/firefox/addon/snapnote/">Firefox</a> | 
     <a href="https://chromewebstore.google.com/detail/snapnote/gblgefagjalfolidiedaepbkacajaeng">Edge</a>
+		-->
     <br />
   </p>
 </p>
@@ -27,7 +30,7 @@ Powered by the open-source block-based rich text editor [BlockNote](https://gith
  <img src="github/darkmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
 </div> -->
 
- <img src="github/1400x560.png" alt="Dark Mode Screenshot" />
+<img src="github/1400x560.png" alt="Dark Mode Screenshot" />
 
 ## Motivation
 This project was initially created with the realization that sometimes we need to take quick notes while navigating the web. We often use apps like Notion or Obsidian, but there are instances where we may not have the option to do so or, for something **quick**, lack the time to open the app and create a new note. SnapNote is designed for us, anytime, anywhere, with it installed, to take a note **immediately** in our browser and then transfer that information to our preferred apps when possible.
