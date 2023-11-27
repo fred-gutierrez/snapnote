@@ -15,9 +15,9 @@ export default function Navbar() {
         </h1>
       </div>
       <div className="text-end">
-        <DarkModeSwitch className="text-base mx-4 hover:-translate-y-0.5 transition duration-150 ease-in-out" />
+        <DarkModeSwitch className="text-base mx-4" />
         <Link to="/settings" className="text-base">
-          <i className="fa-regular fa-gear fa-xl hover:-translate-y-0.5 transition duration-150 ease-in-out"></i>
+          <i className="fa-regular fa-gear fa-xl"></i>
         </Link>
       </div>
     </nav>

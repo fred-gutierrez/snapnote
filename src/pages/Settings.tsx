@@ -52,7 +52,7 @@ export default function Settings() {
             className="text-lg mr-4"
             target="_blank"
           >
-            <i className="fa-brands fa-github fa-xl hover:-translate-y-0.5 transition duration-150 ease-in-out"></i>
+            <i className="fa-brands fa-github fa-xl"></i>
           </a>
           <Coffee />
         </div>
