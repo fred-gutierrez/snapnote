@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DarkModeSwitch from "./DarkModeSwitch";
+import ClearText from "./ClearText";
 
 export default function Navbar() {
   return (
@@ -18,6 +19,7 @@ export default function Navbar() {
         </h1>
       </div>
       <div className="text-end">
+        <ClearText className="text-base mx-4" />
         <DarkModeSwitch className="text-base mx-4" />
         <Link
           to="/settings"

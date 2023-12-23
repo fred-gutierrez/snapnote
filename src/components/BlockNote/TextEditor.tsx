@@ -8,6 +8,7 @@ import CopyMenu from "../CopyMenu";
 import { useDarkMode } from "../../utils/darkMode";
 import { useHideExport } from "../../utils/hideExport";
 import { useHideCopy } from "../../utils/hideCopy";
+import { useClearText } from "../../utils/clearText";
 
 export default function TextEditor() {
   const [markdown, setMarkdown] = useState<string>("");
@@ -16,6 +17,7 @@ export default function TextEditor() {
   const { isDarkMode } = useDarkMode();
   const { hideExport } = useHideExport();
   const { hideCopy } = useHideCopy();
+  const { isClearText, setIsClearText } = useClearText();
 
   const saveBlocksAsMarkdown = async (blocks: Block[]) => {
     const markdown: string = await editor.blocksToMarkdown(
@@ -66,6 +68,13 @@ export default function TextEditor() {
       }
     },
   });
+
+  if (isClearText) {
+    // clear all the blocks in the editor
+    editor.removeBlocks(editor.topLevelBlocks);
+    // then set the isClearText to false
+    setIsClearText(!isClearText);
+  }
 
   return (
     <div className="flex flex-col h-112 overflow-hidden">
