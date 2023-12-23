@@ -5,8 +5,9 @@ import { theme } from "./Theme";
 import ExportToMarkdown from "../ExportToMarkdown";
 import "@blocknote/core/style.css";
 import CopyMenu from "../CopyMenu";
-import { useHideExport, useHideCopy } from "../../context/SettingsProvider";
-import { useDarkMode } from "../../context/DarkModeProvider";
+import { useDarkMode } from "../../utils/darkMode";
+import { useHideExport } from "../../utils/hideExport";
+import { useHideCopy } from "../../utils/hideCopy";
 
 export default function TextEditor() {
   const [markdown, setMarkdown] = useState<string>("");
@@ -26,7 +27,14 @@ export default function TextEditor() {
   const saveText = (blocks: Block[]) => {
     const textContent: string = blocks
       .filter((block: Block) => block.type !== "image")
-      .map((block: Block) => block.content?.map((inline: any) => inline.text))
+      .map(
+        (block: Block) =>
+          block.content?.map((inline) => {
+            if (inline.type === "text") {
+              return inline.text;
+            }
+          }),
+      )
       .join("\n");
 
     setText(textContent);
@@ -69,14 +77,20 @@ export default function TextEditor() {
       {!hideCopy && !hideExport ? (
         <div className="grid grid-cols-2 mt-4 gap-4">
           <ExportToMarkdown markdown={markdown} />
-          <CopyMenu text={text} markdown={markdown} />
+          <CopyMenu
+            text={text}
+            markdown={markdown}
+          />
         </div>
       ) : !hideCopy || !hideExport ? (
         <div className="mt-4 grid w-full">
-          {hideExport ? null : (
-            <ExportToMarkdown markdown={markdown} />
+          {hideExport ? null : <ExportToMarkdown markdown={markdown} />}
+          {hideCopy ? null : (
+            <CopyMenu
+              text={text}
+              markdown={markdown}
+            />
           )}
-          {hideCopy ? null : <CopyMenu text={text} markdown={markdown} />}
         </div>
       ) : null}
     </div>

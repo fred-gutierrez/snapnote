@@ -1,10 +1,4 @@
-import {
-  ReactNode,
-  useEffect,
-  useState,
-  createContext,
-  useContext,
-} from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface SettingsContextType {
   hideExport: boolean;
@@ -14,7 +8,7 @@ interface SettingsContextType {
   setHideCopy: (hideCopy: boolean) => void;
 }
 
-const SettingsContext = createContext<SettingsContextType | null>(null);
+export const SettingsContext = createContext<SettingsContextType | null>(null);
 
 interface SettingsProviderProps {
   children: ReactNode;
@@ -24,20 +18,14 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
   children,
 }) => {
   const [hideExport, setHideExport] = useState<boolean>(false);
-  const [hideCopy, setHideCopy] =
-    useState<boolean>(false);
+  const [hideCopy, setHideCopy] = useState<boolean>(false);
 
   useEffect(() => {
-    const isHideExportStored =
-      localStorage.getItem("hideExport");
-    const initialHideExport =
-      isHideExportStored === "true" || false;
+    const isHideExportStored = localStorage.getItem("hideExport");
+    const initialHideExport = isHideExportStored === "true" || false;
 
-    const isHideCopyStored = localStorage.getItem(
-      "hideCopy",
-    );
-    const initialHideCopy =
-      isHideCopyStored === "true" || false;
+    const isHideCopyStored = localStorage.getItem("hideCopy");
+    const initialHideCopy = isHideCopyStored === "true" || false;
 
     setHideExport(initialHideExport);
     setHideCopy(initialHideCopy);
@@ -55,26 +43,6 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
       {children}
     </SettingsContext.Provider>
   );
-};
-
-export const useHideExport = () => {
-  const hideExportContext = useContext(SettingsContext);
-  if (!hideExportContext) {
-    throw new Error(
-      "useHideExport must be used within a SettingsProvider",
-    );
-  }
-  return hideExportContext;
-};
-
-export const useHideCopy = () => {
-  const hideCopyContext = useContext(SettingsContext);
-  if (!hideCopyContext) {
-    throw new Error(
-      "useHideExport must be used within a SettingsProvider",
-    );
-  }
-  return hideCopyContext;
 };
 
 export default SettingsProvider;
