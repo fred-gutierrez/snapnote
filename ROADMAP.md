@@ -14,6 +14,6 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 
 - Removed animations from the GitHub, Theme Switcher, and setting buttons since they were inconsistent when clicked.
 
-### Version 0.2
+### Version 0.2 - Unreleased
 
-- Yet to add thing here 😵‍💫
+- Removed the Export Menu and added a Copy To Clipboard Menu with the options to Copy as Markdown and Plain Text. ✅

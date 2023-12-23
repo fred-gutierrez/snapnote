@@ -1,20 +1,19 @@
+import { useState } from "react";
 import { Block, BlockNoteEditor } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { theme } from "./Theme";
+import ExportToMarkdown from "../ExportToMarkdown";
 import "@blocknote/core/style.css";
-import { useState } from "react";
-import ExportMenu from "../ExportMenu";
-import CopyToClipboard from "../CopyToClipboard";
-import { useHideExportMenu, useHideCopy } from "../../context/SettingsProvider";
+import CopyMenu from "../CopyMenu";
+import { useHideExport, useHideCopy } from "../../context/SettingsProvider";
 import { useDarkMode } from "../../context/DarkModeProvider";
 
 export default function TextEditor() {
   const [markdown, setMarkdown] = useState<string>("");
-  const [html, setHTML] = useState<string>("");
   const [text, setText] = useState<string>("");
 
   const { isDarkMode } = useDarkMode();
-  const { hideExportMenu } = useHideExportMenu();
+  const { hideExport } = useHideExport();
   const { hideCopy } = useHideCopy();
 
   const saveBlocksAsMarkdown = async (blocks: Block[]) => {
@@ -22,13 +21,6 @@ export default function TextEditor() {
       blocks.filter((block: Block) => block.type !== "image"),
     );
     setMarkdown(markdown);
-  };
-
-  const saveBlocksAsHTML = async (blocks: Block[]) => {
-    const html: string = await editor.blocksToHTML(
-      blocks.filter((block: Block) => block.type !== "image"),
-    );
-    setHTML(html);
   };
 
   const saveText = (blocks: Block[]) => {
@@ -56,15 +48,12 @@ export default function TextEditor() {
 
       saveBlocksAsMarkdown(editor.topLevelBlocks);
 
-      saveBlocksAsHTML(editor.topLevelBlocks);
-
       saveText(editor.topLevelBlocks);
     },
 
     onEditorReady: (editor) => {
       if (initialContent) {
         saveBlocksAsMarkdown(editor.topLevelBlocks);
-        saveBlocksAsHTML(editor.topLevelBlocks);
         saveText(editor.topLevelBlocks);
       }
     },
@@ -77,17 +66,17 @@ export default function TextEditor() {
         className="flex-1 overflow-y-auto rounded-xl dark:bg-neutral-600 bg-neutral-200"
         theme={isDarkMode ? theme.dark : theme.light}
       />
-      {!hideCopy && !hideExportMenu ? (
+      {!hideCopy && !hideExport ? (
         <div className="grid grid-cols-2 mt-4 gap-4">
-          <ExportMenu markdown={markdown} html={html} />
-          <CopyToClipboard text={text} />
+          <ExportToMarkdown markdown={markdown} />
+          <CopyMenu text={text} markdown={markdown} />
         </div>
-      ) : !hideCopy || !hideExportMenu ? (
+      ) : !hideCopy || !hideExport ? (
         <div className="mt-4 grid w-full">
-          {hideExportMenu ? null : (
-            <ExportMenu markdown={markdown} html={html} />
+          {hideExport ? null : (
+            <ExportToMarkdown markdown={markdown} />
           )}
-          {hideCopy ? null : <CopyToClipboard text={text} />}
+          {hideCopy ? null : <CopyMenu text={text} markdown={markdown} />}
         </div>
       ) : null}
     </div>

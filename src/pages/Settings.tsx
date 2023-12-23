@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 import Coffee from "../components/Coffee";
-import { useHideCopy, useHideExportMenu } from "../context/SettingsProvider";
+import { useHideCopy, useHideExport } from "../context/SettingsProvider";
 import { useState } from "react";
 
 export default function Settings() {
-  const { hideExportMenu, setHideExportMenu } = useHideExportMenu();
+  const { hideExport, setHideExport } = useHideExport();
   const { hideCopy, setHideCopy } = useHideCopy();
   const [goBack, setGoBack] = useState(false);
 
-  const toggleHideExportMenu = () => {
-    const newHideExportMenu = !hideExportMenu;
-    setHideExportMenu(newHideExportMenu);
+  const toggleHideExport = () => {
+    const newHideExport = !hideExport;
+    setHideExport(newHideExport);
 
     if (typeof window !== "undefined") {
-      localStorage.setItem("hideExportMenu", newHideExportMenu.toString());
+      localStorage.setItem("hideExport", newHideExport.toString());
     }
   };
 
@@ -59,20 +59,18 @@ export default function Settings() {
       </header>
 
       <div className="h-96 p-5 text-lg overflow-y-auto rounded leading-8 dark:bg-neutral-600 bg-neutral-200">
-        <button onClick={toggleHideExportMenu}>
+        <button onClick={toggleHideExport}>
           <i
-            className={`fa-classic fa-regular fa-${
-              hideExportMenu ? "square-check" : "square"
-            } mr-2`}
+            className={`fa-classic fa-regular fa-${hideExport ? "square-check" : "square"
+              } mr-2`}
           ></i>
-          Hide Export Menu
+          Hide Export To Markdown
         </button>
         <br />
         <button onClick={toggleHideCopy}>
           <i
-            className={`fa-classic fa-regular fa-${
-              hideCopy ? "square-check" : "square"
-            } mr-2`}
+            className={`fa-classic fa-regular fa-${hideCopy ? "square-check" : "square"
+              } mr-2`}
           ></i>
           Hide Copy to Clipboard
         </button>

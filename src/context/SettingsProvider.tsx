@@ -7,8 +7,8 @@ import {
 } from "react";
 
 interface SettingsContextType {
-  hideExportMenu: boolean;
-  setHideExportMenu: (hideExportMenu: boolean) => void;
+  hideExport: boolean;
+  setHideExport: (hideExport: boolean) => void;
 
   hideCopy: boolean;
   setHideCopy: (hideCopy: boolean) => void;
@@ -23,15 +23,15 @@ interface SettingsProviderProps {
 export const SettingsProvider: React.FC<SettingsProviderProps> = ({
   children,
 }) => {
-  const [hideExportMenu, setHideExportMenu] = useState<boolean>(false);
+  const [hideExport, setHideExport] = useState<boolean>(false);
   const [hideCopy, setHideCopy] =
     useState<boolean>(false);
 
   useEffect(() => {
-    const isHideExportMenuStored =
-      localStorage.getItem("hideExportMenu");
-    const initialHideExportMenu =
-      isHideExportMenuStored === "true" || false;
+    const isHideExportStored =
+      localStorage.getItem("hideExport");
+    const initialHideExport =
+      isHideExportStored === "true" || false;
 
     const isHideCopyStored = localStorage.getItem(
       "hideCopy",
@@ -39,15 +39,15 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
     const initialHideCopy =
       isHideCopyStored === "true" || false;
 
-    setHideExportMenu(initialHideExportMenu);
+    setHideExport(initialHideExport);
     setHideCopy(initialHideCopy);
   }, []);
 
   return (
     <SettingsContext.Provider
       value={{
-        hideExportMenu,
-        setHideExportMenu,
+        hideExport,
+        setHideExport,
         hideCopy,
         setHideCopy,
       }}
@@ -57,21 +57,21 @@ export const SettingsProvider: React.FC<SettingsProviderProps> = ({
   );
 };
 
-export const useHideExportMenu = () => {
-  const hideExportMenuContext = useContext(SettingsContext);
-  if (!hideExportMenuContext) {
+export const useHideExport = () => {
+  const hideExportContext = useContext(SettingsContext);
+  if (!hideExportContext) {
     throw new Error(
-      "useHideExportMenu must be used within a SettingsProvider",
+      "useHideExport must be used within a SettingsProvider",
     );
   }
-  return hideExportMenuContext;
+  return hideExportContext;
 };
 
 export const useHideCopy = () => {
   const hideCopyContext = useContext(SettingsContext);
   if (!hideCopyContext) {
     throw new Error(
-      "useHideExportMenu must be used within a SettingsProvider",
+      "useHideExport must be used within a SettingsProvider",
     );
   }
   return hideCopyContext;
