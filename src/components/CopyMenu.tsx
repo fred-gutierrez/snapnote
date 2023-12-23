@@ -31,27 +31,23 @@ export default function CopyMenu({ text, markdown }: propTypes) {
   function copyToClipboard() {
     const textToCopy = text;
 
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        setIsCopyTextDone(true);
-        setTimeout(() => {
-          setIsCopyTextDone(false);
-        }, 3000);
-      });
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      setIsCopyTextDone(true);
+      setTimeout(() => {
+        setIsCopyTextDone(false);
+      }, 3000);
+    });
   }
 
   function copyToMarkdown() {
     const markdownToCopy = markdown;
 
-    navigator.clipboard
-      .writeText(markdownToCopy)
-      .then(() => {
-        setIsCopyMarkdownDone(true);
-        setTimeout(() => {
-          setIsCopyMarkdownDone(false);
-        }, 3000);
-      });
+    navigator.clipboard.writeText(markdownToCopy).then(() => {
+      setIsCopyMarkdownDone(true);
+      setTimeout(() => {
+        setIsCopyMarkdownDone(false);
+      }, 3000);
+    });
   }
 
   return (
@@ -86,4 +82,3 @@ export default function CopyMenu({ text, markdown }: propTypes) {
     </>
   );
 }
-
