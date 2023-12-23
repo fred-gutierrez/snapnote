@@ -1,5 +1,5 @@
-import { useDarkMode } from "../context/DarkModeProvider.tsx";
 import { useEffect } from "react";
+import { useDarkMode } from "../utils/darkMode";
 
 interface DarkModeSwitchTypes {
   className: string;
@@ -27,7 +27,10 @@ const DarkModeSwitch: React.FC<DarkModeSwitchTypes> = ({ className }) => {
 
   return (
     <>
-      <button onClick={toggleDarkMode} className={className}>
+      <button
+        onClick={toggleDarkMode}
+        className={className}
+      >
         {isDarkMode ? (
           <i className="fa-regular fa-space-station-moon-construction fa-xl"></i>
         ) : (
