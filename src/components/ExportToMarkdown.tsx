@@ -9,12 +9,11 @@ export default function ExportToMarkdown({ markdown }: propTypes) {
 
   const exportMarkdown = () => {
     if (markdown.length == 0) {
-      setIsContentEmpty(true)
+      setIsContentEmpty(true);
       setTimeout(() => {
         setIsContentEmpty(false);
       }, 3000);
-    }
-    else {
+    } else {
       const markdownText = `data:text/markdown;charset=utf-8,${encodeURIComponent(
         markdown,
       )}`;

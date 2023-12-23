@@ -15,9 +15,18 @@ export default function App() {
             <div className="app m-auto">
               <div className="py-5 dark:bg-neutral-700 dark:text-white bg-neutral-100 text-black">
                 <Routes>
-                  <Route path="*" element={<Home />} />
-                  <Route path="/" element={<Home />} />
-                  <Route path="/settings" element={<Settings />} />
+                  <Route
+                    path="*"
+                    element={<Home />}
+                  />
+                  <Route
+                    path="/"
+                    element={<Home />}
+                  />
+                  <Route
+                    path="/settings"
+                    element={<Settings />}
+                  />
                 </Routes>
               </div>
               <Navbar />
