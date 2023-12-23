@@ -1,9 +1,32 @@
-export default function ClearText() {
+import React from "react";
+import { useClearText } from "../utils/clearText";
+
+interface ClearTextTypes {
+  className: string;
+}
+
+const ClearText: React.FC<ClearTextTypes> = ({ className }) => {
+  const { isClearText, setIsClearText } = useClearText();
+
+  const toggleClearText = () => {
+    const newClearText = !isClearText;
+    setIsClearText(newClearText);
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("isClearText", newClearText.toString());
+    }
+  };
+
   return (
     <>
-      <button>
+      <button
+        className={className}
+        onClick={toggleClearText}
+      >
         <i className="fa-regular fa-trash-can-xmark fa-xl" />
       </button>
     </>
   );
-}
+};
+
+export default ClearText;
