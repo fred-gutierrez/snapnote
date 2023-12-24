@@ -1,6 +1,6 @@
 import TextEditor from "../components/BlockNote/TextEditor";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <section className="mx-5">
@@ -9,3 +9,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { PropsWithChildren, createContext, useEffect, useState } from "react";
 
 interface DarkModeContextType {
   isDarkMode: boolean;
@@ -7,11 +7,7 @@ interface DarkModeContextType {
 
 export const DarkModeContext = createContext<DarkModeContextType | null>(null);
 
-interface DarkModeProviderProps {
-  children: ReactNode;
-}
-
-export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({
+export const DarkModeProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);

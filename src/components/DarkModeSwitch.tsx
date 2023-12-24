@@ -5,7 +5,7 @@ interface DarkModeSwitchTypes {
   className: string;
 }
 
-const DarkModeSwitch: React.FC<DarkModeSwitchTypes> = ({ className }) => {
+const DarkModeSwitch = ({ className }: DarkModeSwitchTypes) => {
   const { isDarkMode, setIsDarkMode } = useDarkMode();
 
   const toggleDarkMode = () => {

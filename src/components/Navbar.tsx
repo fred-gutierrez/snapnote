@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import DarkModeSwitch from "./DarkModeSwitch";
 import ClearText from "./ClearText";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="grid grid-cols-2 py-8 px-10 items-center dark:bg-neutral-600 dark:text-white bg-neutral-200 text-black">
       <div className="flex">
@@ -31,3 +31,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar

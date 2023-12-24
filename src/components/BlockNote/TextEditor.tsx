@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Block, BlockNoteEditor } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { theme } from "./Theme";
-import ExportToMarkdown from "../ExportToMarkdown";
-import "@blocknote/core/style.css";
-import CopyMenu from "../CopyMenu";
 import { useDarkMode } from "../../utils/darkMode";
 import { useHideExport } from "../../utils/hideExport";
 import { useHideCopy } from "../../utils/hideCopy";
 import { useClearText } from "../../utils/clearText";
+import ExportToMarkdown from "../ExportToMarkdown";
+import CopyMenu from "../CopyMenu";
+import "@blocknote/core/style.css";
 
-export default function TextEditor() {
+const TextEditor = () => {
   const [markdown, setMarkdown] = useState<string>("");
   const [text, setText] = useState<string>("");
 
@@ -105,3 +105,5 @@ export default function TextEditor() {
     </div>
   );
 }
+
+export default TextEditor

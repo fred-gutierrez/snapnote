@@ -5,13 +5,11 @@ interface propTypes {
   markdown: string;
 }
 
-export default function CopyMenu({ text, markdown }: propTypes) {
+const CopyMenu = ({ text, markdown }: propTypes) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showEmptyMessage, setShowEmptyMessage] = useState<boolean>(false);
   const [isCopyTextDone, setIsCopyTextDone] = useState<boolean>(false);
   const [isCopyMarkdownDone, setIsCopyMarkdownDone] = useState<boolean>(false);
-
-  console.log(text);
 
   const openMenu = () => {
     if (markdown.length === 0) {
@@ -28,7 +26,7 @@ export default function CopyMenu({ text, markdown }: propTypes) {
     setIsMenuOpen(false);
   };
 
-  function copyToClipboard() {
+  const copyToClipboard = () => {
     const textToCopy = text;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
@@ -39,7 +37,7 @@ export default function CopyMenu({ text, markdown }: propTypes) {
     });
   }
 
-  function copyToMarkdown() {
+  const copyToMarkdown = () => {
     const markdownToCopy = markdown;
 
     navigator.clipboard.writeText(markdownToCopy).then(() => {
@@ -82,3 +80,5 @@ export default function CopyMenu({ text, markdown }: propTypes) {
     </>
   );
 }
+
+export default CopyMenu

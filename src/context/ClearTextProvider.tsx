@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { PropsWithChildren, createContext, useEffect, useState } from "react";
 
 interface ClearTextContextType {
   isClearText: boolean;
@@ -9,9 +9,7 @@ export const ClearTextContext = createContext<ClearTextContextType | null>(
   null,
 );
 
-interface ClearTextContextProps extends React.PropsWithChildren {}
-
-export const ClearTextProvider: React.FC<ClearTextContextProps> = ({
+export const ClearTextProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isClearText, setIsClearText] = useState<boolean>(false);

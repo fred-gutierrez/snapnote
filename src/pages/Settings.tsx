@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useHideExport } from "../utils/hideExport";
 import { useHideCopy } from "../utils/hideCopy";
 
-export default function Settings() {
+const Settings = () => {
   const { hideExport, setHideExport } = useHideExport();
   const { hideCopy, setHideCopy } = useHideCopy();
   const [goBack, setGoBack] = useState(false);
@@ -60,18 +60,16 @@ export default function Settings() {
       <div className="h-96 p-5 text-lg overflow-y-auto rounded leading-8 dark:bg-neutral-600 bg-neutral-200">
         <button onClick={toggleHideExport}>
           <i
-            className={`fa-classic fa-regular fa-${
-              hideExport ? "square-check" : "square"
-            } mr-2`}
+            className={`fa-classic fa-regular fa-${hideExport ? "square-check" : "square"
+              } mr-2`}
           ></i>
           Hide Export To Markdown
         </button>
         <br />
         <button onClick={toggleHideCopy}>
           <i
-            className={`fa-classic fa-regular fa-${
-              hideCopy ? "square-check" : "square"
-            } mr-2`}
+            className={`fa-classic fa-regular fa-${hideCopy ? "square-check" : "square"
+              } mr-2`}
           ></i>
           Hide Copy to Clipboard
         </button>
@@ -79,3 +77,5 @@ export default function Settings() {
     </section>
   );
 }
+
+export default Settings

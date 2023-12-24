@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import ClearTextProvider from "./context/ClearTextProvider";
 
-export default function App() {
+const App = () => {
   return (
     <html lang="en">
       <DarkModeProvider>
@@ -40,3 +40,5 @@ export default function App() {
     </html>
   );
 }
+
+export default App

@@ -1,11 +1,10 @@
-import React from "react";
 import { useClearText } from "../utils/clearText";
 
 interface ClearTextTypes {
   className: string;
 }
 
-const ClearText: React.FC<ClearTextTypes> = ({ className }) => {
+const ClearText = ({ className }: ClearTextTypes) => {
   const { isClearText, setIsClearText } = useClearText();
 
   const toggleClearText = () => {

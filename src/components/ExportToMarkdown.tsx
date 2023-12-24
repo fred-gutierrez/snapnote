@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-interface propTypes {
+interface ExportToMarkdownTypes {
   markdown: string;
 }
 
-export default function ExportToMarkdown({ markdown }: propTypes) {
+const ExportToMarkdown: React.FC<ExportToMarkdownTypes> = ({ markdown }) => {
   const [isContentEmpty, setIsContentEmpty] = useState<boolean>(false);
 
   const exportMarkdown = () => {
@@ -38,3 +38,5 @@ export default function ExportToMarkdown({ markdown }: propTypes) {
     </>
   );
 }
+
+export default ExportToMarkdown

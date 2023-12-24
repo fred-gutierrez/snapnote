@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { PropsWithChildren, createContext, useEffect, useState } from "react";
 
 interface SettingsContextType {
   hideExport: boolean;
@@ -10,11 +10,7 @@ interface SettingsContextType {
 
 export const SettingsContext = createContext<SettingsContextType | null>(null);
 
-interface SettingsProviderProps {
-  children: ReactNode;
-}
-
-export const SettingsProvider: React.FC<SettingsProviderProps> = ({
+export const SettingsProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
   const [hideExport, setHideExport] = useState<boolean>(false);
