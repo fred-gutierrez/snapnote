@@ -18,6 +18,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [I Want To Contribute](#i-want-to-contribute)
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Enhancements](#suggesting-enhancements)
+- [Project's Architecture](#projects-architecture)
 
 ## Code of Conduct
 This project and everyone participating in it is governed by the [SnapNote Code of Conduct](CODE_OF_CONDUCT.md). 
@@ -91,3 +92,24 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/fred-g
 - Explain current and expected behavior.
 - Optionally include screenshots or GIFs.
 - Justify the enhancement's utility for most users.
+
+## Project's Architecture
+
+SnapNote is made with **CRXJS**, **React**, **TypeScript**, **Tailwind CSS**, **FontAwesome**, and **Vite**. We aim to keep the code concise and consistent, allowing contributors to feel comfortable implementing bug fixes or enhancements.
+
+The first guideline, highly encouraged for **any** code added to SnapNote, is always to leave comments about your code at any step you find viable. This can help others understand the code better at a first glance.
+
+Tech Stack Specific:
+
+- **CRXJS**: No rules here, but it is highly encouraged to use its main functionality, which helps test SnapNote as an extension in Google Chrome (or Chromium). To add SnapNote dev build as an extension, follow the guide at https://crxjs.dev/vite-plugin/getting-started/react/dev-basics.
+- **React**:
+    *  In this project, we solely use Functional Programming, but it is required to do it with variables `const example = () => {}` rather than functions `function example() {}`. This is to take advantage of hoisting, making the code more concise.
+- **TypeScript**:
+    *  When declaring types, try your best to prevent using the old `React.FC<PropsType>(props)` instead, use `({ destructuredProps }: PropsType)`. This is to prevent some known issues and limitations when using `React.FC`.
+    *   When declaring types, put them at the top of the file and use `interface` to do so.
+- **Tailwind CSS**:
+    *   Tailwind classes can be a mess at times, so it is highly encouraged to be very efficient with classes by preventing the use of unnecessary classes.
+    *   Dark Mode is implemented with Tailwind CSS classes; always do your best to keep the changing values like colors next to each other, specifically when declaring `dark:` on any class.
+- **FontAwesome:** This project implements FontAwesome Pro 6.4.2 via CDN.
+
+That's it. I would like to clarify that any sort of addition to SnapNote is heavily appreciated, and these guidelines are not to restrict you but to give you a path on how to interact with the code and community ❤️.
