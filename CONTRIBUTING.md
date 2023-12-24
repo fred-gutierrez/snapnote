@@ -95,7 +95,7 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/fred-g
 
 ## Project's Architecture
 
-SnapNote is made with **CRXJS**, **React**, **TypeScript**, **Tailwind CSS**, **FontAwesome**, and **Vite**. We aim to keep the code concise and consistent, allowing contributors to feel comfortable implementing bug fixes or enhancements.
+SnapNote is made with **CRXJS**, **React**, **TypeScript**, **Tailwind CSS**, **Font Awesome**, and **Vite**. We aim to keep the code concise and consistent, allowing contributors to feel comfortable implementing bug fixes or enhancements.
 
 The first guideline, highly encouraged for **any** code added to SnapNote, is always to leave comments about your code at any step you find viable. This can help others understand the code better at a first glance.
 
@@ -110,6 +110,6 @@ Tech Stack Specific:
 - **Tailwind CSS**:
     *   Tailwind classes can be a mess at times, so it is highly encouraged to be very efficient with classes by preventing the use of unnecessary classes.
     *   Dark Mode is implemented with Tailwind CSS classes; always do your best to keep the changing values like colors next to each other, specifically when declaring `dark:` on any class.
-- **FontAwesome:** This project implements FontAwesome Pro 6.4.2 via CDN.
+- **Font Awesome:** This project implements FontAwesome Pro 6.4.2 via CDN.
 
 That's it. I would like to clarify that any sort of addition to SnapNote is heavily appreciated, and these guidelines are not to restrict you but to give you a path on how to interact with the code and community ❤️.
