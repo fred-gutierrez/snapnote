@@ -55,9 +55,9 @@ const CopyMenu = ({ text, markdown }: propTypes) => {
         onClick={isMenuOpen ? closeMenu : openMenu}
       >
         {showEmptyMessage
-          ? "No Content To Copy"
+          ? "No Content to Copy"
           : isMenuOpen === false
-            ? "Copy To Clipboard"
+            ? "Copy to Clipboard"
             : "Close Copy Menu"}
       </button>
 

@@ -6,7 +6,7 @@ import { useDarkMode } from "../../utils/darkMode";
 import { useHideExport } from "../../utils/hideExport";
 import { useHideCopy } from "../../utils/hideCopy";
 import { useClearText } from "../../utils/clearText";
-import ExportToMarkdown from "../ExportToMarkdown";
+import ExportAsMarkdown from "../ExportAsMarkdown";
 import CopyMenu from "../CopyMenu";
 import "@blocknote/core/style.css";
 
@@ -85,7 +85,7 @@ const TextEditor = () => {
       />
       {!hideCopy && !hideExport ? (
         <div className="grid grid-cols-2 mt-4 gap-4">
-          <ExportToMarkdown markdown={markdown} />
+          <ExportAsMarkdown markdown={markdown} />
           <CopyMenu
             text={text}
             markdown={markdown}
@@ -93,7 +93,7 @@ const TextEditor = () => {
         </div>
       ) : !hideCopy || !hideExport ? (
         <div className="mt-4 grid w-full">
-          {hideExport ? null : <ExportToMarkdown markdown={markdown} />}
+          {hideExport ? null : <ExportAsMarkdown markdown={markdown} />}
           {hideCopy ? null : (
             <CopyMenu
               text={text}

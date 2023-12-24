@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-interface ExportToMarkdownTypes {
+interface ExportAsMarkdownTypes {
   markdown: string;
 }
 
-const ExportToMarkdown: React.FC<ExportToMarkdownTypes> = ({ markdown }) => {
+const ExportAsMarkdown: React.FC<ExportAsMarkdownTypes> = ({ markdown }) => {
   const [isContentEmpty, setIsContentEmpty] = useState<boolean>(false);
 
   const exportMarkdown = () => {
@@ -33,10 +33,10 @@ const ExportToMarkdown: React.FC<ExportToMarkdownTypes> = ({ markdown }) => {
         className="text-base py-5 font-semibold rounded-lg dark:bg-neutral-600 bg-neutral-200 hover:-translate-y-0.5 transition duration-150 ease-in-out"
         onClick={exportMarkdown}
       >
-        {isContentEmpty ? "No Content To Export" : "Export To Markdown"}
+        {isContentEmpty ? "No Content to Export" : "Export as Markdown"}
       </button>
     </>
   );
 }
 
-export default ExportToMarkdown
+export default ExportAsMarkdown
