@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Block, BlockNoteEditor } from "@blocknote/core";
-import { BlockNoteView, ReactSlashMenuItem, getDefaultReactSlashMenuItems, useBlockNote } from "@blocknote/react";
+import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { theme } from "./Theme";
 import { useDarkMode } from "../../utils/darkMode";
 import { useHideExport } from "../../utils/hideExport";
@@ -18,9 +18,6 @@ const TextEditor = () => {
   const { hideExport } = useHideExport();
   const { hideCopy } = useHideCopy();
   const { isClearText, setIsClearText } = useClearText();
-
-  // This removes the /image from the slash menu
-  const newSlashMenuItems: ReactSlashMenuItem[] = getDefaultReactSlashMenuItems().filter(val => val.name != "Image");
 
   const saveBlocksAsMarkdown = async (blocks: Block[]) => {
     const markdown: string = await editor.blocksToMarkdown(
@@ -49,8 +46,6 @@ const TextEditor = () => {
   const initialContent: string | null = localStorage.getItem("editorContent");
 
   const editor: BlockNoteEditor = useBlockNote({
-    slashMenuItems: newSlashMenuItems,
-
     // If the editor contents were previously saved, this restores them
     initialContent: initialContent ? JSON.parse(initialContent) : undefined,
 
