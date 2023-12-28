@@ -19,3 +19,8 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 - Removed the Export Menu and added a Copy To Clipboard Menu with the options to Copy as Markdown and Plain Text. ✅
 - "Delete All" Button was added by @MahmoudESSE on GitHub ❤️ . ✅
 - Minor changes to text, for better readability. ✅
+
+## Version 0.3 - Unreleased
+
+- Improved the Setting buttons.
+
