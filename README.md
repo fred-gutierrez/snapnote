@@ -36,7 +36,7 @@ Powered by the open-source block-based rich text editor [BlockNote](https://gith
 This project was initially created with the realization that sometimes we need to take quick notes while navigating the web. We often use apps like Notion or Obsidian, but there are instances where we may not have the option to do so or, for something **quick**, lack the time to open the app and create a new note. SnapNote is designed for us, anytime, anywhere, with it installed, to take a note **immediately** in our browser and then transfer that information to our preferred apps when possible.
 
 ## Architecture
-The current technologies used for this project include [CRXJS](https://github.com/crxjs/chrome-extension-tools), React, TypeScript, Tailwind CSS, Font Awesome and Vite.
+The current technologies used for this project include [CRXJS](https://github.com/crxjs/chrome-extension-tools), React, TypeScript, Tailwind CSS, Redux, Font Awesome and Vite.
 * The goal is to keep the technology stack as simple as possible to ensure we maintain the core principle of speed. However, as always, the stack is subject to change and improvement.
 * For the backend, we are considering implementing Supabase to store credentials and notes. This is part of the [roadmap](ROADMAP.md) and will be implemented down the line. We are very open to feedback regarding this subject.
 

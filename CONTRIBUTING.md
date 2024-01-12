@@ -95,7 +95,7 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/fred-g
 
 ## Project's Architecture
 
-SnapNote is made with **CRXJS**, **React**, **TypeScript**, **Tailwind CSS**, **Font Awesome**, and **Vite**. We aim to keep the code concise and consistent, allowing contributors to feel comfortable implementing bug fixes or enhancements.
+SnapNote is made with **CRXJS**, **React**, **TypeScript**, **Tailwind CSS**, **Redux**, **Font Awesome**, and **Vite**. We aim to keep the code concise and consistent, allowing contributors to feel comfortable implementing bug fixes or enhancements.
 
 The first guideline, highly encouraged for **any** code added to SnapNote, is always to leave comments about your code at any step you find viable. This can help others understand the code better at a first glance.
 
@@ -109,6 +109,8 @@ Tech Stack Specific:
     *   When declaring types, put them at the top of the file and use `interface` to do so.
 - **Tailwind CSS**:
     *   Tailwind classes can be a mess at times, so it is highly encouraged to be very efficient with classes by preventing the use of unnecessary classes.
+- **Redux**:
+    *   Redux has been recently implemented to replace the Context API. Accordingly, any settings-related code should be added to the settingsSlice.ts file. Additionally, you can create new files to contain any state that you wish to share across the entire application.
     *   Dark Mode is implemented with Tailwind CSS classes; always do your best to keep the changing values like colors next to each other, specifically when declaring `dark:` on any class.
 - **Font Awesome:** This project implements FontAwesome Pro 6.4.2 via CDN.
 
