@@ -14,8 +14,10 @@
   "dependencies": {
     "@blocknote/core": "^0.9.6",
     "@blocknote/react": "^0.9.6",
+    "@reduxjs/toolkit": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
     "react-router-dom": "^6.19.0"
   },
   "devDependencies": {

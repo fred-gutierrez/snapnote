@@ -1,26 +1,19 @@
-import { useClearText } from "../utils/clearText";
+import { toggleClearText } from "../redux/clearTextSlice";
+import { AppDispatch } from "../redux/store";
+import { useDispatch } from "react-redux";
 
 interface ClearTextTypes {
   className: string;
 }
 
 const ClearText = ({ className }: ClearTextTypes) => {
-  const { isClearText, setIsClearText } = useClearText();
-
-  const toggleClearText = () => {
-    const newClearText = !isClearText;
-    setIsClearText(newClearText);
-
-    if (typeof window !== "undefined") {
-      localStorage.setItem("isClearText", newClearText.toString());
-    }
-  };
+  const dispatch: AppDispatch = useDispatch()
 
   return (
     <>
       <button
         className={className}
-        onClick={toggleClearText}
+        onClick={() => dispatch(toggleClearText())}
       >
         <i className="fa-regular fa-trash-can-xmark fa-xl" />
       </button>

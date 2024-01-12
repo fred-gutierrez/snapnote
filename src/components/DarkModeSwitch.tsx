@@ -1,37 +1,31 @@
 import { useEffect } from "react";
-import { useDarkMode } from "../utils/darkMode";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../redux/darkModeSlice";
+import { AppDispatch, RootState } from "../redux/store";
 
 interface DarkModeSwitchTypes {
   className: string;
 }
 
 const DarkModeSwitch = ({ className }: DarkModeSwitchTypes) => {
-  const { isDarkMode, setIsDarkMode } = useDarkMode();
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    setIsDarkMode(newDarkMode);
-
-    if (typeof window !== "undefined") {
-      localStorage.setItem("isDarkMode", newDarkMode.toString());
-    }
-  };
+  const darkMode = useSelector((state: RootState) => state.darkMode.value)
+  const dispatch: AppDispatch = useDispatch()
 
   useEffect(() => {
-    if (isDarkMode) {
+    if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [isDarkMode]);
+  }, [darkMode]);
 
   return (
     <>
       <button
-        onClick={toggleDarkMode}
+        onClick={() => dispatch(toggleDarkMode())}
         className={className}
       >
-        {isDarkMode ? (
+        {darkMode ? (
           <i className="fa-regular fa-space-station-moon-construction fa-xl"></i>
         ) : (
           <i className="fa-sharp fa-regular fa-sun-bright fa-xl"></i>

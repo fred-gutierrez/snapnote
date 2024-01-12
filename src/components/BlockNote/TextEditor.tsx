@@ -2,22 +2,25 @@ import { useState } from "react";
 import { Block, BlockNoteEditor } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { theme } from "./Theme";
-import { useDarkMode } from "../../utils/darkMode";
-import { useHideExport } from "../../utils/hideExport";
-import { useHideCopy } from "../../utils/hideCopy";
-import { useClearText } from "../../utils/clearText";
 import ExportAsMarkdown from "../ExportAsMarkdown";
 import CopyMenu from "../CopyMenu";
 import "@blocknote/core/style.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { toggleClearText } from "../../redux/clearTextSlice";
 
 const TextEditor = () => {
   const [markdown, setMarkdown] = useState<string>("");
   const [text, setText] = useState<string>("");
 
-  const { isDarkMode } = useDarkMode();
-  const { hideExport } = useHideExport();
-  const { hideCopy } = useHideCopy();
-  const { isClearText, setIsClearText } = useClearText();
+  // Redux state managment
+  const darkMode = useSelector((state: RootState) => state.darkMode.value)
+  const hideExport = useSelector((state: RootState) => state.settings.hideExport)
+  const hideCopy = useSelector((state: RootState) => state.settings.hideCopy)
+  const isClearText = useSelector((state: RootState) => state.clearText.value)
+  const dispatch: AppDispatch = useDispatch()
 
   const saveBlocksAsMarkdown = async (blocks: Block[]) => {
     const markdown: string = await editor.blocksToMarkdown(
@@ -73,7 +76,7 @@ const TextEditor = () => {
     // clear all the blocks in the editor
     editor.removeBlocks(editor.topLevelBlocks);
     // then set the isClearText to false
-    setIsClearText(!isClearText);
+    dispatch(toggleClearText())
   }
 
   return (
@@ -81,7 +84,7 @@ const TextEditor = () => {
       <BlockNoteView
         editor={editor}
         className="flex-1 overflow-y-auto rounded-xl dark:bg-neutral-600 bg-neutral-200"
-        theme={isDarkMode ? theme.dark : theme.light}
+        theme={darkMode ? theme.dark : theme.light}
       />
       {!hideCopy && !hideExport ? (
         <div className="grid grid-cols-2 mt-4 gap-4">
