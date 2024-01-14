@@ -109,9 +109,9 @@ Tech Stack Specific:
     *   When declaring types, put them at the top of the file and use `interface` to do so.
 - **Tailwind CSS**:
     *   Tailwind classes can be a mess at times, so it is highly encouraged to be very efficient with classes by preventing the use of unnecessary classes.
-- **Redux**:
-    *   Redux has been recently implemented to replace the Context API. Accordingly, any settings-related code should be added to the settingsSlice.ts file. Additionally, you can create new files to contain any state that you wish to share across the entire application.
     *   Dark Mode is implemented with Tailwind CSS classes; always do your best to keep the changing values like colors next to each other, specifically when declaring `dark:` on any class.
+- **Redux**:
+    *   Redux has been recently implemented to replace the Context API. Accordingly, any settings-related code should be added to the `settingsSlice.ts` file. Additionally, you can create new files to contain any state that you wish to share across the entire application.
 - **Font Awesome:** This project implements FontAwesome Pro 6.4.2 via CDN.
 
 That's it. I would like to clarify that any sort of addition to SnapNote is heavily appreciated, and these guidelines are not to restrict you but to give you a path on how to interact with the code and community ❤️.
