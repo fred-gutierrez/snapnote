@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react"
 const SelectedTextMenu = () => {
   const menuRef = useRef(document.createElement("div"))
   const [position, setPosition] = useState({ top: 0, left: 0 })
+  let initialContent: string | null = localStorage.getItem("editorContent");
+  initialContent = initialContent ? JSON.parse(initialContent) : undefined;
 
   const showMenu = (selectedText: string) => {
     const menu = menuRef.current
@@ -16,13 +18,13 @@ const SelectedTextMenu = () => {
       const rect = range.getBoundingClientRect();
       setPosition({
         top: rect.top + window.scrollY - menu.clientHeight,
-        left: rect.left + window.scrollX + rect.width / 2 - menu.clientWidth / 2
+        left: rect.left + window.scrollX + rect.width / 2
       })
     }
 
     menu.classList.add("absolute", "z-100", "opacity-50", "hover:opacity-100");
     menu.style.top = `${position.top}px`
-    menu.style.top = `${position.left}px`
+    menu.style.left = `${position.left}px`
 
     const copyButton = document.createElement("button");
     copyButton.classList.add("dark:bg-neutral-800", "bg-neutral-100", "py-2", "rounded-3xl", "focus:outline-none", "border-2", "dark:border-neutral-700", "border-neutral-300", "font-semibold")
@@ -40,6 +42,9 @@ const SelectedTextMenu = () => {
     copyButton.appendChild(snapNoteLogo);
 
     copyButton.addEventListener("click", () => {
+      if (initialContent) {
+        localStorage.setItem("editorContent", selectedText)
+      }
       console.log("Copying to SnapNote: ", selectedText)
       sendText.textContent = "Sent!"
     });
