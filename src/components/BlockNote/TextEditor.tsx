@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Block, BlockNoteEditor } from "@blocknote/core";
-import { BlockNoteView, useBlockNote } from "@blocknote/react";
+import { BlockNoteView, getDefaultReactSlashMenuItems, useBlockNote } from "@blocknote/react";
 import { theme } from "./Theme";
 import ExportAsMarkdown from "../ExportAsMarkdown";
 import CopyMenu from "../CopyMenu";
@@ -23,27 +23,24 @@ const TextEditor = () => {
   const dispatch: AppDispatch = useDispatch()
 
   const saveBlocksAsMarkdown = async (blocks: Block[]) => {
-    const markdown: string = await editor.blocksToMarkdown(
-      blocks.filter((block: Block) => block.type !== "image"),
-    );
+    const markdown: string = await editor.blocksToMarkdown(blocks);
     setMarkdown(markdown);
   };
 
   const saveText = (blocks: Block[]) => {
-    const textContent: string = blocks
-      .filter((block: Block) => block.type !== "image")
-      .map(
-        (block: Block) =>
-          block.content?.map((inline) => {
-            if (inline.type === "text") {
-              return inline.text;
-            }
-          }),
-      )
-      .join("\n");
+    const textContent: string = blocks.map(
+      (block: Block) =>
+        block.content?.map((inline) => {
+          if (inline.type === "text") {
+            return inline.text;
+          }
+        }),
+    ).join("\n");
 
     setText(textContent);
   };
+
+  const customSlashMenuItems = [...getDefaultReactSlashMenuItems()]
 
   // This gets the previously stored editor contents (Must be within the text editor to ensure that when changing routes it gets the most recent text)
   const initialContent: string | null = localStorage.getItem("editorContent");
@@ -63,6 +60,8 @@ const TextEditor = () => {
 
       saveText(editor.topLevelBlocks);
     },
+
+    slashMenuItems: customSlashMenuItems.filter(block => block.name !== "Image"),
 
     onEditorReady: (editor) => {
       if (initialContent) {
