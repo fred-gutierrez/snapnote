@@ -20,7 +20,15 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 - "Delete All" Button was added by @MahmoudESSE on GitHub ❤️ . ✅
 - Minor changes to text, for better readability. ✅
 
-## Version 0.3 - Unreleased
+### Version 0.3 - Unreleased
 
-- Improved the Setting buttons.
+- Improved the Setting buttons. ✅
+- Removed the Image item in the slash menu. ✅
 
+### Version 1.0 - Unreleased
+
+- Implemented the Milkdown editor.
+
+### Version 2.0 - Unreleased
+
+- Added the "Send To Snapnote" button as an option in Settings. Adds a way to send selected text in any page to SnapNote directly.
