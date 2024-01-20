@@ -25,7 +25,7 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 - Improved the Setting buttons. ✅
 - Removed the Image item in the slash menu. ✅
 
-### Version 0.4 - Unreleased
+### Version 0.4 - Launched 1/18/2024
 
 - When the Copy Menu is open, it is now closeable by clicking outside. ✅
 
