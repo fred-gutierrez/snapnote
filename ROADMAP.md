@@ -28,7 +28,6 @@ Welcome! This is a semi-roadmap in which we base our development on the next ver
 ### Version 0.4 - Unreleased
 
 - When the Copy Menu is open, it is now closeable by clicking outside. ✅
-- Added a Code item to the slash menu.
 
 ### Version 1.0 - Unreleased
 
