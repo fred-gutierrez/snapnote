@@ -23,7 +23,7 @@
 
 SnapNote is an open-source note-taking extension created with the goals of transparency, convenience, and most importantly, **speed**.
 
-Powered by the open-source block-based rich text editor [BlockNote](https://github.com/TypeCellOS/BlockNote) and, in the future, offering [Milkdown](https://github.com/Milkdown/milkdown) as an option.
+Powered by the open-source block-based rich text editor [BlockNote](https://github.com/TypeCellOS/BlockNote)!
 
 <!-- <div align="center">
  <img src="github/lightmode-screenshot1.png" alt="Dark Mode Screenshot" width="350" />
